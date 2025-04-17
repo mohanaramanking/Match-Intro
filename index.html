@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPL Match Intro</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle, #000000 20%, #111 100%);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .intro-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      text-align: center;
+    }
+
+    .team {
+      font-size: 5rem;
+      font-weight: bold;
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+
+    .team.left {
+      left: -100%;
+      color: #fcd116; /* CSK Yellow */
+      animation: slideInLeft 1.5s ease-out forwards;
+    }
+
+    .team.right {
+      right: -100%;
+      color: #6c3483; /* BEN Purple */
+      animation: slideInRight 1.5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    .vs {
+      font-size: 6rem;
+      opacity: 0;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: popVS 0.8s ease forwards;
+      animation-delay: 2s;
+    }
+
+    .match-info {
+      font-size: 1.2rem;
+      margin-top: 200px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 2.8s;
+    }
+
+    @keyframes slideInLeft {
+      to {
+        left: 15%;
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      to {
+        right: 15%;
+        opacity: 1;
+      }
+    }
+
+    @keyframes popVS {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="intro-container">
+    <div class="team left">CSK</div>
+    <div class="team right">BEN</div>
+    <div class="vs">VS</div>
+    <div class="match-info">Today | 7:30 PM IST | M. A. Chidambaram Stadium</div>
+  </div>
+
+</body>
+</html>
